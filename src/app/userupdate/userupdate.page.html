@@ -1,0 +1,78 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>userupdate</ion-title>
+    <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="container">
+        <div class="inner">
+        <div class="form-group">
+            <mat-form-field>
+                <div class="col-sm-10">
+            <input  type="text" class="form-control" id="id" (change)="getUserById()" required
+              placeholder="Enter id" name="id" matInput [(ngModel)]="id">
+          </div>             </mat-form-field>
+
+        </div>
+        <div class="form-group">
+            <mat-form-field>
+                <div class="col-sm-10">
+            <input type="text" class="form-control" id="firstName" required
+              placeholder="First Name" name="firstName"  matInput [(ngModel)]="firstName">
+          </div>            </mat-form-field>
+
+        </div>
+        <div class="form-group">
+            <mat-form-field>
+                <div class="col-sm-10">
+            <input type="text" class="form-control"  matInput id="lastName" required placeholder="Last Name" name="lastName"
+              [(ngModel)]="lastName">
+          </div>            </mat-form-field>
+
+        </div>
+        <div class="form-group">
+            <mat-form-field>
+                <div class="col-sm-10">
+            <input type="text" class="form-control" matInput id="email" required placeholder="Email" name="email"
+              [(ngModel)]="email">
+          </div>            </mat-form-field>
+
+        </div>
+        <div class="form-group">
+            <mat-form-field>
+                <div class="col-sm-10">
+              <input type="text" class="form-control"  matInput id="password" required placeholder="Password" name="password"
+                [(ngModel)]="password">
+            </div>            </mat-form-field>
+
+          </div>
+          <!-- <div class="form-group">
+              <label class="control-label col-sm-4" for="role">Role</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" id="role" required placeholder="Admin,Global or Local" name="role"
+                  [(ngModel)]="role">
+              </div>
+            </div> -->
+            <div class="form-group">
+                <mat-form-field>
+
+                    <mat-label>Account Status:</mat-label>
+                        <mat-select class="form-control" id="accountStatus" name="accountStatus" required [(ngModel)]="accountStatus">
+                            <mat-option class='option' *ngFor='let accountStatus of accountStatuses' [value]="accountStatus">{{accountStatus}}</mat-option>
+                          </mat-select>              
+                    </mat-form-field>
+              </div>
+        <div class="form-group">
+          <div class="col-sm-6 col-md-3"></div>
+          <div class="col-sm-3 col-md-3">
+            <button type="submit" mat-raised-button  (click)="updateUser()">Submit</button>
+          </div>
+    
+        </div>
+      </div></div>
+    
+</ion-content>

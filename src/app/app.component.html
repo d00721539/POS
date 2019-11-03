@@ -1,0 +1,171 @@
+<ion-app>
+  <ion-menu contentId="content1" side="start">
+    <ion-header>
+      <ion-toolbar>
+        <ion-menu-toggle>
+          <ion-title>Menu</ion-title>
+        </ion-menu-toggle>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ul>
+        <li *ngIf="isAdmin || isLocal">
+          <ion-menu-toggle>
+            <ion-button menu-close [routerLink]="['/product']">Home</ion-button>
+          </ion-menu-toggle>
+          <!-- <a menu-close [routerLink]="['product']">Home</a> -->
+        </li>
+        <li *ngIf="isGlobal">
+          <ion-menu-toggle>
+            <ion-button menu-close [routerLink]="['/businessaccountlist']">Home</ion-button>
+          </ion-menu-toggle>
+          <!-- <a menu-close [routerLink]="['businessaccountlist']">Home</a> -->
+        </li>
+        <li *ngIf="isGlobal">
+          <ion-menu-toggle>
+            <ion-button menu-close [routerLink]="['/checkout']">Checkedout Item List</ion-button>
+          </ion-menu-toggle>
+          <!-- <a menu-close  [routerLink]="['productglobal']">Checkedout Item List</a> -->
+        </li>
+        <li *ngIf="isAdmin || isLocal">
+          <ion-menu-toggle>
+            <ion-button menu-close [routerLink]="['/checkout']">CheckOut</ion-button>
+          </ion-menu-toggle>
+          <!-- <a menu-close  [routerLink]="['/checkout']">CheckOut</a> -->
+        </li>
+
+        <li *ngIf="isLocal">
+          <ion-menu-toggle>
+            <ion-button menu-close [routerLink]="['/checkedoutitem']">CheckedOut</ion-button>
+          </ion-menu-toggle>
+          <!-- <a  menu-close  [routerLink]="['/checkedoutitem']">CheckedOut</a> -->
+        </li>
+        <li *ngIf="isAdmin">
+          <ion-menu-toggle>
+            <ion-button menu-close [routerLink]="['/checkedoutitembybusiness']">CheckedOut</ion-button>
+          </ion-menu-toggle>
+          <!-- <a menu-close  [routerLink]="['/checkedoutitembybusiness']">CheckedOut</a> -->
+        </li>
+
+        <li *ngIf="isLocal">
+          <ion-menu-toggle>
+            <ion-button menu-close [routerLink]="['/addproduct']">Add Product</ion-button>
+          </ion-menu-toggle>
+          <!-- <a menu-close  [routerLink]="['/addproduct']">Add Product</a> -->
+        </li>
+        <li *ngIf="isAdmin" class="dropdown">
+        <ion-button>  <a href="javascript:void(0)" class="dropbtn">
+            Product Settings
+          </a></ion-button>
+          <div class="dropdown-content">
+            <ion-menu-toggle>
+              <ion-button menu-close [routerLink]="['/product']">Product List</ion-button>
+            </ion-menu-toggle>
+            <ion-menu-toggle>
+              <ion-button menu-close [routerLink]="['/addproduct']">Add Product</ion-button>
+            </ion-menu-toggle>
+            <ion-menu-toggle>
+              <ion-button menu-close [routerLink]="['/updateproduct']">Update Product</ion-button>
+            </ion-menu-toggle>
+            <ion-menu-toggle>
+              <ion-button menu-close [routerLink]="['/deleteproduct']">Delete Product</ion-button>
+            </ion-menu-toggle>
+            <!-- <a menu-close  [routerLink]="['/productglobal']">Product List</a>
+            <a menu-close  [routerLink]="['/addproduct']">Add Product</a>
+            <a menu-close  [routerLink]="['/updateproduct']">Update Product</a>
+            <a menu-close  [routerLink]="['/deleteproduct']">Delete Product</a> -->
+          </div>
+        </li>
+        <li *ngIf="isAdmin" class="dropdown">
+          <ion-button><a href="javascript:void(0)" class="dropbtn">
+            User Settings
+          </a></ion-button>
+          <div class="dropdown-content">
+            <ion-menu-toggle>
+              <ion-button menu-close [routerLink]="['/userlist']">User List</ion-button>
+            </ion-menu-toggle>
+            <ion-menu-toggle>
+              <ion-button menu-close [routerLink]="['/useradd']">User Add</ion-button>
+            </ion-menu-toggle>
+            <ion-menu-toggle>
+              <ion-button menu-close [routerLink]="['/userupdate']">User Update</ion-button>
+            </ion-menu-toggle>
+            <ion-menu-toggle>
+              <ion-button menu-close [routerLink]="['/userdelete']">User Delete</ion-button>
+            </ion-menu-toggle>
+            <!-- <a menu-close  [routerLink]="['/userlist']" >User List</a>
+            <a [routerLink]="['/useradd']">Add User</a>
+            <a menu-close [routerLink]="['/userupdate']">Update User</a>
+            <a menu-close [routerLink]="['/userdelete']">Delete User</a> -->
+          </div>
+        </li>
+        <li *ngIf="isGlobal" class="dropdown">
+          
+          <ion-button><a href="javascript:void(0)" class="dropbtn">
+            Business Account Settings
+          </a></ion-button>
+          <div class="dropdown-content">
+            <ion-menu-toggle>
+              <ion-button menu-close [routerLink]="['/businessaccountadd']">Add Business Account</ion-button>
+            </ion-menu-toggle>
+            <!-- <a menu-close [routerLink]="['/businessaccountadd']" >Add Business Account</a> -->
+            <ion-menu-toggle>
+              <ion-button menu-close [routerLink]="['/businessaccountedit']">Update Business Account</ion-button>
+            </ion-menu-toggle>
+            <!-- <a menu-close [routerLink]="['/businessaccountedit']" >Update Business Account</a> -->
+            <ion-menu-toggle>
+              <ion-button menu-close [routerLink]="['/businessaccountdisable']">Delete Business Account</ion-button>
+            </ion-menu-toggle>
+            <!-- <a menu-close [routerLink]="['/businessaccountdisable']" >Delete Business Account</a> -->
+          </div>
+        </li>
+        <li *ngIf="isGlobal" class="dropdown">
+         <ion-button> <a href="javascript:void(0)" class="dropbtn">
+            Product Settings
+          </a></ion-button>
+          <div class="dropdown-content">
+            <ion-menu-toggle>
+              <ion-button menu-close [routerLink]="['/productglobal']">Product List</ion-button>
+            </ion-menu-toggle>
+            <ion-menu-toggle>
+              <ion-button menu-close [routerLink]="['/globalproductupdate']">Update Product</ion-button>
+            </ion-menu-toggle>
+            <ion-menu-toggle>
+              <ion-button menu-close [routerLink]="['/globalproductdelete']">Delete Product</ion-button>
+            </ion-menu-toggle>
+            <!-- <a menu-close [routerLink]="['/productglobal']">Product List</a>
+              <a menu-close [routerLink]="['/globalproductupdate']">Update Product</a>
+              <a menu-close [routerLink]="['/globalproductdelete']">Delete Product</a> -->
+          </div>
+        </li>
+        <li *ngIf="isGlobal" class="dropdown">
+         <ion-button> <a  class="dropbtn">
+            Local User Settings
+          </a></ion-button>
+          <div class="dropdown-content">
+              <ion-menu-toggle>
+                <ion-button menu-close [routerLink]="['/globallocaluserlist']">Local User List</ion-button>
+              </ion-menu-toggle>
+              <ion-menu-toggle>
+                <ion-button menu-close [routerLink]="['/globallocaluserupdate']">Update Local User</ion-button>
+              </ion-menu-toggle>
+              <ion-menu-toggle>
+                <ion-button menu-close [routerLink]="['/globallocaluserdelete']">Delete Local User</ion-button>
+              </ion-menu-toggle>
+              <!-- <a menu-close [routerLink]="['/globallocaluserlist']" >Local User List</a></ion-item>
+                  <a menu-close [routerLink]="['/globallocaluserupdate']">Update Local User</a>
+                  <a menu-close [routerLink]="['/globallocaluserdelete']">Delete Local User</a> -->
+          </div>
+        </li>
+        <li>
+          <ion-menu-toggle>
+            <ion-button menu-close (click)="logout()">Logout</ion-button>
+          </ion-menu-toggle>
+        </li>
+          <!-- <a class="dropdown-item" (click)="logout()">Logout</a></li> -->
+      </ul>
+    </ion-content>
+  </ion-menu>
+
+  <ion-router-outlet id="content1" main></ion-router-outlet>
+</ion-app>

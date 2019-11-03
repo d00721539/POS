@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>addproduct</ion-title>
+    <ion-buttons slot="start">
+        <ion-menu-button autoHide="true"></ion-menu-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+      <div class="form-group">
+          <mat-form-field>
+            <input matInput  type="text" class="form-control" id="name" required placeholder="Enter Product Name" name="name" [(ngModel)]="productName">
+        </mat-form-field>
+          </div>
+  
+        <div class="form-group">
+            <mat-form-field>
+            <input matInput type="text" class="form-control" id="barcodeNumber" required  placeholder="Enter Barcode Number" name="barcodeNumber" [(ngModel)]="barcodeNumber">
+          </mat-form-field>
+        </div>
+  
+        <div class="form-group">
+            <mat-form-field>
+              <input matInput type="text" class="form-control" id="barcodeNumber" required  placeholder="Enter Quantity" name="quantity" [(ngModel)]="quantity">
+            </mat-form-field>
+          </div>
+        <div class="form-group">
+          <div></div>
+              <button type="submit" mat-raised-button  (click)="AddProduct()">Submit</button>  
+        </div>
+  </div>
+</ion-content>

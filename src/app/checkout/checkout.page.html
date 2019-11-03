@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>checkout</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button autoHide="false"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div class="container">
+
+    <ion-list>
+      <ion-item *ngIf="num">
+        <ion-input type="text" value="" [(ngModel)]="num"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <button ion-button (click)="scan()">Button</button>
+      </ion-item>
+
+    </ion-list>
+
+    <button type="submit" mat-raised-button (click)="checkoutItem()">Submit</button>
+  </div>
+</ion-content>

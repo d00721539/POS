@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>businessaccountadd</ion-title>
+    <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="container">
+        <div class="inner">
+
+          <div class="form-group">
+              <mat-form-field>
+                <input  matInput type="text" class="form-control" id="firstName" required placeholder="Enter First Name" name="firstName" [(ngModel)]="firstName">
+              </mat-form-field>
+            
+              </div>
+      
+            <div class="form-group">
+                <mat-form-field>
+                <input matInput type="text" class="form-control" id="lastName" required  placeholder="Enter Last Name" name="lastName" [(ngModel)]="lastName">
+              </mat-form-field>
+            </div>
+      
+            <div class="form-group">
+                <mat-form-field>
+                  <input  matInput type="text" class="form-control" id="email" required  placeholder="Enter Email" name="email" [(ngModel)]="email">
+                </mat-form-field>
+              </div>
+              
+    
+              <div class="form-group">
+                  <mat-form-field>
+                    <input matInput type="text" class="form-control" id="password" required  placeholder="Enter Password" name="password" [(ngModel)]="password">
+                  </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field>
+                      <input matInput type="text" class="form-control" id="businessName" required  placeholder="Enter Business Name" name="businessName" [(ngModel)]="businessName">
+                    </mat-form-field>
+                  </div>
+                  <div class="form-group"><mat-form-field>
+
+                      <mat-label>Account Status:</mat-label>
+                          <mat-select class="form-control" id="accountStatus" name="accountStatus" required [(ngModel)]="accountStatus">
+                              <mat-option class='option' *ngFor='let accountStatus of accountStatuses' [value]="accountStatus">{{accountStatus}}</mat-option>
+                            </mat-select>              
+                      </mat-form-field>
+
+                    </div>
+            <div class="form-group">
+              <div class="col-sm-6 col-md-3"></div>
+              <div class="col-sm-3 col-md-3">
+                <button type="submit" mat-raised-button  (click)="addUser()">Submit</button>
+              </div>
+      
+            </div>
+      </div></div>
+</ion-content>

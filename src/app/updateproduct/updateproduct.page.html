@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>updateproduct</ion-title>
+    <ion-buttons slot="start">
+        <ion-menu-button autoHide="false"></ion-menu-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="container">
+        <div class="inner">
+        <div class="form-group">
+            <div class="col-sm-10" >
+                <div class="alert alert-info" role="alert">
+                    First type product Id!
+                  </div></div>
+                  <mat-form-field>
+                      <div class="col-sm-10">
+            <input type="text" class="form-control" id="id" (change)="getProductById()" required
+              placeholder="Enter id" name="id" matInput [(ngModel)]="id">
+          </div>            </mat-form-field>
+
+        </div>
+        <div class="form-group">
+            <mat-form-field>
+                <div class="col-sm-10">
+            <input type="text" class="form-control" id="barcodeNumber" required
+              placeholder="Enter Barcode Number"  matInput name="barcodeNumber" [(ngModel)]="barcodeNumber">
+          </div>            </mat-form-field>
+
+        </div>
+        <div class="form-group">
+            <mat-form-field>
+                <div class="col-sm-10">
+            <input type="text" class="form-control" matInput id="name" required placeholder="Enter Product Name" name="name"
+              [(ngModel)]="productName">
+          </div>            </mat-form-field>
+
+        </div>
+        <div class="form-group">
+            <mat-form-field>
+                <div class="col-sm-10">
+            <input type="text" class="form-control" matInput id="quantity" required placeholder="Enter Quantity" name="quantity"
+              [(ngModel)]="quantity">
+          </div>            </mat-form-field>
+
+        </div>
+        <div class="form-group">
+          <div class="col-sm-6 col-md-3"></div>
+          <div class="col-sm-3 col-md-3">
+            <button type="submit" mat-raised-button  (click)="updateProduct()">Submit</button>
+          </div>
+      
+        </div>
+      </div></div>
+      
+</ion-content>
